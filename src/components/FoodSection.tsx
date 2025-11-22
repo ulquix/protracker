@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useBear } from "../store/zustandstore"
 import { Input } from "./ui/input"
 import Mircros from "./Mircros"
-
+import Result from "./Result"
 const FoodSection = () => {
     const data = useBear((state)=>state.data)
-    const [grams,setGrams] = useState<Record<string,number>>({})
+    console.log(data)
+    const [grams,setGrams] = useState<Record<string,number>>({})   
+    
     const onhandleGramChange =(name:string,value:string)=>{
       const num = Number(value)
       setGrams((prev)=>({
@@ -17,29 +19,39 @@ const FoodSection = () => {
 const g = grams[name] ?? 100
   return ((newval * g) / 100).toFixed(1)
     }
+    useEffect(() => {
+  data.forEach(item => {
+    if (grams[item.name] === undefined) {
+      setGrams(prev => ({ ...prev, [item.name]: 100 }))
+    }
+  })
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [data])
   return (
    <div className="text-4xl mt-10 w-7xl mx-auto mb-4">
     <div className="font-semibold text-secondary-foreground mb-5">Your Foods</div>
   {data.length>0 ? (
+    <div className="flex gap-6">
     <div className=" flex flex-col gap-y-3">
 
        { data.map((item)=>(
-        <div key={item.name} className="py-5 w-3xl px-5  bg-accent rounded-2xl border-2 border-border hover:shadow-xl ">
+        
+        <div key={item.name} className="py-5 w-3xl px-5  bg-accent rounded-2xl border-2 border-border hover:shadow-lg transition-all duration-150 ">
             <div className="flex justify-between mb-5 items-center">
             <h1 className="text-2xl">
                 {item.name.split('_').join(' ').toUpperCase()}
                 </h1>
                 <div className="flex gap-2 justify-center items-center">
-                    <Input placeholder="100" className="w-15! h-6! font-sans pl-2 bg-background" type="number" onChange={e =>
+                    <Input className="w-15! h-6! font-sans pl-2 bg-background" type="number"  onChange={e =>
                       onhandleGramChange(item.name, e.target.value) 
-                    } value={grams[item.name] ?? 100}/>
+                    } />
                     <span className="text-xl">g</span>
                 </div>
             </div>
             <div className="grid grid-cols-4 text-xl gap-x-2">
               <div className="bg-background/50 rounded-lg  pl-2  py-1  leading-none w-30">
                 <h2>Calories</h2>
-                <span className="text-primary"> {calc(item.values?.calories as number, item.name)}g</span>
+                <span className="text-primary"> {calc(item.values?.calories as number, item.name)}Kcal</span>
               </div>
               <div className="bg-background/50 rounded-lg pl-2 py-1 leading-none w-30 ">
                 <h2>Carbs</h2>
@@ -60,6 +72,8 @@ const g = grams[name] ?? 100
             </div>
         </div>
       ))}
+    </div>
+<Result quantity={grams}/>
     </div>
 ) :
   <div className="w-2xl bg-secondary/10 flex justify-center items-center rounded-xl text-center  h-[30vh] border-dashed border-2 text-accent">No food items added yet</div>
