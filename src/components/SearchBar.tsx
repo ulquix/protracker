@@ -32,13 +32,17 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative ">
         <Input
           type="text"
-          className="h-15 pl-10 w-full rounded-2xl text-2xl! placeholder:text-2xl"
+          className="h-15 pl-10 w-full rounded-xl text-2xl! placeholder:text-2xl"
           placeholder="Search an item"
           value={value}
           onChange={search}
+          autoComplete="off"
+  autoCorrect="off"
+  autoCapitalize="none"
+  spellCheck={false}
         />
         <div className="absolute top-5 left-2 flex items-center">
           <svg
@@ -58,23 +62,21 @@ const SearchBar = () => {
             <path d="M21 21l-6 -6" />
           </svg>
         </div>
-      </div>
-
       <div
-        className={`w-full mt-2 ${suggestions.length > 0 ? "pt-2" : ""} max-h-[30vh] overflow-auto no-scrollbar text-2xl rounded-2xl bg-secondary`}
+        className={`w-full mt-2 ${suggestions.length > 0 ? "pt-2" : ""}  max-h-[30vh] overflow-auto no-scrollbar text-2xl rounded-2xl bg-secondary absolute`}
       >
         {suggestions.length > 0 ? (
           suggestions.map((element) => (
             <div
               key={element.name}
-              className="mx-2 px-5 py-2 hover:border hover:border-primary-foreground flex justify-between mb-2 hover:bg-accent rounded-xl transition-all duration-75 ease-in cursor-pointer"
+              className="mx-2 px-5 py-2  flex justify-between mb-2 hover:bg-accent rounded-xl transition-all duration-75 ease-in cursor-pointer"
               onClick={handleClick}
               data-value={JSON.stringify(element.values)}
               data-name={element.name}
               tabIndex={0}
               role="button"
             >
-              <div>{element.name}</div>
+              <div>{element.name.split('_').join(" ")}</div>
               <div className="text-primary">{element?.values?.calories} Kcal</div>
             </div>
           ))
@@ -82,6 +84,8 @@ const SearchBar = () => {
           value && <div className="px-5 py-2 text-primary-foreground/80">No items matched your query</div>
         )}
       </div>
+      </div>
+
     </>
   )
 }

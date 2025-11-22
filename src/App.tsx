@@ -1,7 +1,6 @@
-import { useBear } from "./store/zustandstore"
+import FoodSection from "./components/FoodSection"
 import Header from "./components/Header"
 function App() {
-const data = useBear((state)=>state.data)
 
 
 
@@ -10,11 +9,8 @@ const data = useBear((state)=>state.data)
     <>
     <div className="min-h-screen bg-background w-screen font-pixel pt-1">
       <Header/>
-<div>
-  {data && data.map((item)=>(
-    <div key={item.name}>{item.name}</div>
-  ))}
-</div>
+<FoodSection/>
+
     </div>
     </>
   )

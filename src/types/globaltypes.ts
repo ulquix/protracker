@@ -1,4 +1,4 @@
- interface FoodNutrients {
+ export interface FoodNutrients {
   unit?: string;
 
   calories?: number;
@@ -44,6 +44,6 @@
 
 export interface SearchResult {
   name:string;
-  values :FoodNutrients | null
+  values :FoodNutrients 
 
 }
