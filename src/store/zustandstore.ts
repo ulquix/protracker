@@ -15,9 +15,9 @@ interface iskadata{
 
 }
 export const useFood = create<iskadata>((set,get) => ({
-  tempdata:{},
+  tempdata:JSON.parse(localStorage.getItem("tempdata")!) || {},
   data:foodItems,
-  log:[],
+  log:JSON.parse(localStorage.getItem("data")!) as LoggedFood[] || [],
    add(foodId) {
     const {log,data,tempdata} = get()
     
