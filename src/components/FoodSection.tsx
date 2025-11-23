@@ -22,9 +22,9 @@ useEffect(()=>{
 
        { data.map((item)=>(
         
-        <div key={item.id} className="py-5 w-3xl px-5  bg-card rounded-2xl border-2 border-foreground hover:shadow-[8px_8px_1px_rgba(105,52,15,0.5)] transition-all duration-150 ">
+        <div key={item.id} className="py-5 w-3xl px-5   bg-card rounded-2xl border-2 border-foreground shadow-[8px_8px_1px_rgba(105,52,15,0.5)] transition-all duration-150 ">
             <div className="flex justify-between mb-5 items-center">
-            <h1 className="text-2xl">
+            <h1 className="text-2xl font-medium">
                 {item.foodId.split('_').join(' ').toUpperCase()}
                 </h1>
                 <div className="flex gap-2 justify-center items-center">
@@ -36,19 +36,19 @@ useEffect(()=>{
             </div>
             <div className="grid grid-cols-4 text-xl gap-x-2">
 
-              <div className="bg-background rounded-lg border border-primary/80  pl-2  py-1  leading-none w-30">
+              <div className="bg-background rounded-lg border-2 border-primary/80  pl-2  py-1  leading-none w-30">
                 <h2>Calories</h2>
                 <span className="text-primary"> {temp[item.foodId].macros.calories }Kcal</span>
               </div>
-              <div className="bg-background rounded-lg border border-primary/80 pl-2 py-1 leading-none w-30 ">
+              <div className="bg-background rounded-lg border-2 border-primary/80 pl-2 py-1 leading-none w-30 ">
                 <h2>Carbs</h2>
                 <span className="text-primary"> {temp[item.foodId].macros.carbs_g}g</span>
               </div>
-              <div className="bg-background rounded-lg border border-primary/80 pl-2 py-1  leading-none w-30">
+              <div className="bg-background rounded-lg border-2 border-primary/80 pl-2 py-1  leading-none w-30">
                 <h2>Protein</h2>
                 <span className="text-primary"> {temp[item.foodId].macros.protein_g}g</span>
               </div>
-              <div className="bg-background rounded-lg border border-primary/80 pl-2  py-1 leading-none w-30">
+              <div className="bg-background rounded-lg border-2 border-primary/80 pl-2  py-1 leading-none w-30">
                 <h2>Fats</h2>
                 <span className="text-primary"> {temp[item.foodId].macros.fat_g}g</span>
               </div>
