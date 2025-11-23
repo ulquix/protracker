@@ -1,12 +1,10 @@
-import type { SearchResult } from "@/types/globaltypes"
-import { data } from "@/constants/micros"
+import type { Total} from "@/types/globaltypes"
+import { micros } from "@/constants/micros"
 
-const Micros = ({
+export const Microscomp = ({
   item,
-  calc,
 }: {
-  item: SearchResult
-  calc: (a: number, b: string) => string
+  item: Total
 }) => {
   return (
     <details className="mt-3 ">
@@ -15,15 +13,15 @@ const Micros = ({
       </summary>
 
       <div className="mt-2 grid grid-cols-3 gap-x-6">
-        {data.map(key => {
-          if (key in item.values) {
+        {micros.map(key => {
+          if (key in item.micros) {
             return (
                 <div className="flex justify-between items-center">
 <div className="text-secondary-foreground text-xl">{key.split('_').slice(0,-1).join(' ')}:</div>
 <div className="flex text-xl font-medium text-primary">
 
               <div key={key} className="">
-                {calc(item.values[key] as number, item.name)}
+                {item.micros[key]}
               </div>
               <div >{key.split('_').at(-1)}</div>
 </div>
@@ -38,4 +36,3 @@ const Micros = ({
   )
 }
 
-export default Micros

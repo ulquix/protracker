@@ -1,17 +1,19 @@
-import data from "../constants/data.json"
-
+import {foodItems} from "../constants/data"
+import type { suggestion } from "@/types/globaltypes"
 export const SearchItems = ({ keyword }: { keyword: string }) => {
   const k = keyword.trim().toLowerCase().normalize("NFKD")
 
   if (!k) return []
 
-  const found = []
+  const found:suggestion[]=[]
+foodItems.forEach((item)=>{
 
-  for (const [key, value] of Object.entries(data)) {
-    if (key.toLowerCase().includes(k)) {
-      found.push({ name: key, values: value })
-    }
+  if(item.name.toLowerCase().includes(keyword)){
+    found.push({id:item.id,name:item.name,calories:item.macros.calories})
   }
+})
+
+
 
   return found
 }

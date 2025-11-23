@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className="min-h-screen bg-background w-screen font-pixel pt-1">
+    <div className="min-h-screen bg-background  font-pixel pt-1 ">
       <Header/>
 <FoodSection/>
 

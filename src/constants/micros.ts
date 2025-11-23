@@ -1,5 +1,6 @@
-import type { FoodNutrients } from "@/types/globaltypes";
-export const data: (keyof FoodNutrients)[] = [
+import type { Micros, Macros } from "@/types/globaltypes";
+
+export const micros: (keyof Micros)[] = [
   "fiber_g",
   "sugar_g",
   "saturated_fat_g",
@@ -32,3 +33,9 @@ export const data: (keyof FoodNutrients)[] = [
   "choline_mg",
   "niacin_mg",
 ];
+export const macros: (keyof Macros)[] = [
+  "calories",
+  "protein_g",
+  "fat_g",
+  "carbs_g",
+] 
