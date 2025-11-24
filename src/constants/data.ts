@@ -1,4 +1,4 @@
-import type { FoodItem } from "@/types/globaltypes";
+import type { FoodItem, Total } from "@/types/globaltypes";
 
 export const foodItems: FoodItem[] = [
   {
@@ -668,6 +668,103 @@ export const foodItems: FoodItem[] = [
       vitamin_c_mg: 8,
       vitamin_k_mcg: 145,
     }
+  },
+  {
+    id:"amla",
+    name: "Amla",
+    macros: {
+    calories: 44,              // ~44 kcal per 100 g :contentReference[oaicite:0]{index=0}  
+    protein_g: 0.9,            // ~0.9 g :contentReference[oaicite:1]{index=1}  
+    carbs_g: 10.2,             // ~10.2 g :contentReference[oaicite:2]{index=2}  
+    fat_g: 0.58,               // ~0.58 g :contentReference[oaicite:3]{index=3}  
+  },
+  micros: {
+    calcium_mg: 25,            // ~25 mg :contentReference[oaicite:6]{index=6}  
+    iron_mg: 0.9,              // ~0.9 mg :contentReference[oaicite:7]{index=7}  
+    sugar_g: 4.4    ,           // ~4.4g sugar (per Indian Express) :contentReference[oaicite:5]{index=5}  
+    magnesium_mg: 10, 
+        fiber_g: 4.3,              // ~4.3 g :contentReference[oaicite:4]{index=4}  
+         // ~10 mg :contentReference[oaicite:8]{index=8}  
+    phosphorus_mg: 21,         // ~21 mg :contentReference[oaicite:9]{index=9}  
+    potassium_mg: 198,         // ~198 mg :contentReference[oaicite:10]{index=10}  
+    sodium_mg: 13,             // ~13 mg :contentReference[oaicite:11]{index=11}  
+    copper_mg: 0.1,             // ~0.1 mg :contentReference[oaicite:12]{index=12}  
+    manganese_mg: 0.1,         // ~0.1 mg :contentReference[oaicite:13]{index=13}  
+    zinc_mg: 0.12,              // ~0.12 mg :contentReference[oaicite:14]{index=14}  
+    selenium_mcg: 0.6,         // ~0.6 µg :contentReference[oaicite:15]{index=15}  
+
+    vitamin_a_mcg: 15 / 0.3,   // Different sources: ~15 mcg or 290 IU (≈ 87 mcg); using lower bound :contentReference[oaicite:16]{index=16}  
+    vitamin_a_iu: 290,         // ~290 IU :contentReference[oaicite:17]{index=17}  
+
+    vitamin_c_mg: 478,         // ~478 mg (varies widely) :contentReference[oaicite:18]{index=18}  
+    vitamin_d_mcg: 0,          // none / negligible in fresh amla :contentReference[oaicite:19]{index=19}  
+    vitamin_e_mg: 0.16,         // ~0.16 mg α-tocopherol :contentReference[oaicite:20]{index=20}  
+    vitamin_k_mcg: 1.6,         // ~1.6 µg :contentReference[oaicite:21]{index=21}  
+
+    vitamin_b1_mg: 0.1,         // ~0.1 mg (thiamine) :contentReference[oaicite:22]{index=22}  
+    vitamin_b2_mg: 0.04,        // ~0.04 mg (riboflavin) :contentReference[oaicite:23]{index=23}  
+    niacin_mg: 0.5,             // ~0.5 mg (B3 / niacin) :contentReference[oaicite:24]{index=24}  
+    vitamin_b5_mg: 0.3,         // ~0.3 mg (pantothenic acid) :contentReference[oaicite:25]{index=25}  
+    vitamin_b6_mg: 0.06,        // ~0.06 mg :contentReference[oaicite:26]{index=26}  
+    vitamin_b7_mcg: 0,          // biotin not reported or negligible :contentReference[oaicite:27]{index=27}  
+    vitamin_b9_mcg: 3,          // ~3 µg folate :contentReference[oaicite:28]{index=28}  
+    vitamin_b12_mcg: 0,         // none / negligible :contentReference[oaicite:29]{index=29}  
+
+    choline_mg: 4,              // ~4 mg :contentReference[oaicite:30]{index=30}  
+    cholesterol_mg: 0,          // 0 mg (plant fruit) :contentReference[oaicite:31]{index=31}  
+
+    omega_3_g: 0.048 / 0.000048, // ~48 mg (~0.048 g) omega-3 (ALA) :contentReference[oaicite:32]{index=32}  
+  }
   }
 ];
 
+export const dailyRequirements :Total= {
+  macros: {
+    calories: 2000,
+    protein_g: 50,
+    carbs_g: 275,
+    fat_g: 70,
+  },
+  micros: {
+    calcium_mg: 1000,
+  iron_mg: 18,
+  zinc_mg: 11,
+  magnesium_mg: 400,
+  phosphorus_mg: 700,
+  potassium_mg: 4700,
+  sodium_mg: 1500,
+  copper_mg: 0.9,
+  manganese_mg: 2.3,
+
+  fiber_g: 28,
+  sugar_g: 25, // upper limit, not RDA
+  saturated_fat_g: 20, // recommended max
+  monounsaturated_fat_g: 30, // typical target range
+  polyunsaturated_fat_g: 17, // typical target range
+  omega_3_g: 1.6, // ALA requirement
+
+  selenium_mcg: 55,
+  vitamin_a_mcg: 900,
+  vitamin_a_iu: 3000, // converted equivalent
+
+  vitamin_c_mg: 90,
+  vitamin_d_mcg: 15,
+  vitamin_e_mg: 15,
+  vitamin_k_mcg: 120,
+
+  vitamin_b1_mg: 1.2,
+  vitamin_b2_mg: 1.3,
+  riboflavin_mg: 1.3, // same as B2, keeping consistent
+  vitamin_b3_mg: 16,
+  niacin_mg: 16, // same nutrient as B3
+  vitamin_b5_mg: 5,
+  vitamin_b6_mg: 1.3,
+  vitamin_b7_mcg: 30, // biotin
+  vitamin_b9_mcg: 400,
+  folate_mcg: 400, // same nutrient as B9
+  vitamin_b12_mcg: 2.4,
+
+  choline_mg: 550,
+  cholesterol_mg: 300
+  }
+} as const;

@@ -21,10 +21,8 @@ const SearchBar = () => {
     }
   }
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const element = e.currentTarget as HTMLElement
-    const name = element.getAttribute("data-id") || ""
-    addItem(name)
+  const handleClick = (id:string) => {
+    addItem(id)
     setValue("")
     setSuggestions([])
   }
@@ -34,7 +32,7 @@ const SearchBar = () => {
       <div className="relative ">
         <Input
           type="text"
-          className="h-15 pl-10 w-full rounded-xl text-2xl! placeholder:text-2xl"
+          className="h-15 pl-10 w-full border-2 rounded-xl text-2xl! placeholder:text-2xl"
           placeholder="Search an item"
           value={value}
           onChange={search}
@@ -44,7 +42,7 @@ const SearchBar = () => {
   autoCapitalize="none"
   spellCheck={false}
         />
-        <div className="absolute top-5 left-2 flex items-center">
+        <div className="absolute top-5 left-3 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -70,8 +68,8 @@ const SearchBar = () => {
             <div
               key={element.id}
               className="mx-2 px-5 py-2  flex justify-between mb-2 hover:bg-background rounded-xl transition-all duration-75 ease-in cursor-pointer"
-              onClick={handleClick}
-              data-id={element.id}
+              onClick={()=>handleClick(element.id)}
+              onKeyDown={(e)=>{if(e.key=='Enter')handleClick(element.id)}}
               tabIndex={0}
               role="button"
             >

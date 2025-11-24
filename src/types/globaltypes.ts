@@ -31,6 +31,10 @@ export type Micros = {
   vitamin_e_mg?: number,
   vitamin_k_mcg?: number,
   vitamin_b1_mg?: number,
+  vitamin_b2_mg?: number,
+vitamin_b5_mg?: number,
+  vitamin_b9_mcg?: number,
+vitamin_b7_mcg?:number
   vitamin_b3_mg?: number,
   vitamin_b6_mg?: number,
   vitamin_b12_mcg?: number,

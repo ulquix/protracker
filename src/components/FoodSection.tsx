@@ -2,8 +2,8 @@ import { useFood } from "../store/zustandstore"
 import { Input } from "./ui/input"
 import Result from "./Result"
 import {Microscomp} from "./Mircroscomp"
-import { useEffect } from "react"
-const FoodSection = () => {
+import React,{ useEffect } from "react"
+const FoodSection = ({ref}:{ref:React.Ref<HTMLDivElement>}) => {
     const data = useFood((state)=>state.log)
     const update = useFood((state)=>state.updateGrams)
     const temp = useFood((state)=>state.tempdata)
@@ -15,15 +15,15 @@ localStorage.setItem("data",JSON.stringify(data))
 localStorage.setItem("tempdata",JSON.stringify(temp))
 },[data,temp])
   return (
-   <div className="text-4xl mt-10 w-7xl mx-auto mb-8 ">
+   <div className="text-4xl mt-10 w-7xl mx-auto mb-8 " >
     <div className="font-semibold text-secondary-foreground mb-5">Your Foods</div>
   {data.length>0 ? (
-    <div className="flex gap-6">
+    <div className="flex gap-6 justify-between px-3 py-4" ref={ref}>
     <div className=" flex flex-col gap-y-8">
 
        { data.map((item)=>(
         
-        <div key={item.id} className="py-5 w-3xl px-5   bg-card rounded-2xl border-2 border-foreground shadow-[8px_8px_1px_rgba(105,52,15,0.5)] transition-all duration-150 ">
+        <div key={item.id} className="py-5 w-3xl px-5   bg-card rounded-2xl border-2 border-foreground dark:shadow-(--shadow-dark) shadow-(--shadow-bg) transition-all duration-150 ">
             <div className="flex justify-between mb-5 items-center">
             <h1 className="text-2xl font-medium">
                 {item.foodId.split('_').join(' ').toUpperCase()}
@@ -78,6 +78,7 @@ localStorage.setItem("tempdata",JSON.stringify(temp))
 ) :
   <div className="w-2xl bg-secondary/10 flex justify-center items-center rounded-xl text-center  h-[30vh] border-dashed border-2 text-accent">No food items added yet</div>
   }
+
 </div>
   )
 }
