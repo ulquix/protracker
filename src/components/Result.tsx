@@ -30,7 +30,7 @@ const Result = () => {
             Object.keys(total.macros).map(key => (
               <div
                 key={key}
-                className="bg-background w-20 mx-auto h-30 relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center cursor-pointer "
+                className="bg-background w-26 mx-auto h-30 relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center cursor-pointer "
               >
                 <div className="text-2xl ">{key.split("_")[0]}</div>
                 <div className="text-primary">
