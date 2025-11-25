@@ -15,6 +15,9 @@ export const micros: (keyof Micros)[] = [
   "potassium_mg",
   "sodium_mg",
   "zinc_mg",
+  "iodine_mcg",
+  "beta_carotene_mcg",
+  "biotin_mcg",
   "copper_mg",
   "manganese_mg",
   "selenium_mcg",
@@ -23,8 +26,8 @@ export const micros: (keyof Micros)[] = [
   "vitamin_c_mg",
   "vitamin_d_mcg",
   "vitamin_b2_mg",
-"vitamin_b5_mg",
-"vitamin_b7_mcg",
+  "vitamin_b5_mg",
+  "vitamin_b7_mcg",
   "vitamin_e_mg",
   "vitamin_k_mcg",
   "vitamin_b1_mg",
@@ -35,11 +38,10 @@ export const micros: (keyof Micros)[] = [
   "folate_mcg",
   "choline_mg",
   "niacin_mg",
-  
 ];
 export const macros: (keyof Macros)[] = [
   "calories",
   "protein_g",
   "fat_g",
   "carbs_g",
-] 
+];

@@ -1,38 +1,72 @@
-import React, { useState } from "react"
-import { Input } from "./ui/input"
-import { SearchItems } from "../lib/searchitems"
-import type { suggestion } from "../types/globaltypes"
-import { useFood } from "@/store/zustandstore"
+import React, { useEffect, useRef, useState } from "react";
+import { Input } from "./ui/input";
+import { SearchItems } from "../lib/searchitems";
+import type { suggestion } from "../types/globaltypes";
+import { useFood } from "@/store/zustandstore";
 
 const SearchBar = () => {
-  const [value, setValue] = useState("")
-  const [suggestions, setSuggestions] = useState<suggestion[]>([])
-  const addItem = useFood((state) => state.add)
+  const targetRef = useRef<HTMLInputElement>(null);
+  const [value, setValue] = useState("");
+  const [suggestions, setSuggestions] = useState<suggestion[]>([]);
+  const addItem = useFood((state) => state.add);
 
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const keyword = e.currentTarget.value
-    setValue(keyword)
+    const keyword = e.currentTarget.value;
+    setValue(keyword);
 
     if (keyword) {
-      const found = SearchItems({ keyword })
-      setSuggestions(found)
+      const found = SearchItems({ keyword });
+      setSuggestions(found);
     } else {
-      setSuggestions([])
+      setSuggestions([]);
     }
-  }
+  };
 
   const handleClick = (id: string) => {
-    addItem(id)
-    setValue("")
-    setSuggestions([])
-  }
-
+    addItem(id);
+    setValue("");
+    setSuggestions([]);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        targetRef.current &&
+        !targetRef.current.contains(event.target as Node)
+      ) {
+        targetRef.current.blur();
+        setSuggestions([]);
+        setValue("");
+      }
+    };
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSuggestions([]);
+        setValue("");
+        targetRef.current?.blur();
+      }
+    };
+    const handleshortcut = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key === "k") {
+        event.preventDefault();
+        targetRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleshortcut);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleshortcut);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [targetRef]);
   return (
     <div className="relative">
       <Input
+        ref={targetRef}
         type="text"
-        className="h-15 pl-10 w-full border-2 rounded-xl text-xl placeholder:text-xl"
-        placeholder="Search an item"
+        className="h-15 pl-10 w-full border-2 rounded-xl text-2xl! placeholder:text-xl"
+        placeholder="Search an item (Ctrl + K)"
         value={value}
         onChange={search}
         autoComplete="off"
@@ -64,32 +98,30 @@ const SearchBar = () => {
           suggestions.length > 0 ? "pt-2 border" : ""
         } border-secondary max-h-[30vh] overflow-auto no-scrollbar rounded-2xl bg-secondary/10 backdrop-blur-2xl absolute z-50`}
       >
-        {suggestions.length > 0 ? (
-          suggestions.map((element) => (
-            <div
-              key={element.id}
-              className="mx-2 px-5 py-2 flex justify-between mb-2 hover:bg-background focus:bg-background rounded-xl transition-all duration-75 ease-in cursor-pointer text-lg sm:text-xl"
-              onClick={() => handleClick(element.id)}
-              onKeyDown={(e) => {
-                if (e.key == "Enter") handleClick(element.id)
-              }}
-              tabIndex={0}
-              role="button"
-            >
-              <div>{element.name.split("_").join(" ")}</div>
-              <div className="text-primary">{element.calories} Kcal</div>
-            </div>
-          ))
-        ) : (
-          value && (
-            <div className="px-5 py-2 text-primary/80 text-lg">
-              No items matched your query
-            </div>
-          )
-        )}
+        {suggestions.length > 0
+          ? suggestions.map((element) => (
+              <div
+                key={element.id}
+                className="mx-2 px-5 py-2 flex justify-between mb-2 hover:bg-background focus:bg-background rounded-xl transition-all duration-75 ease-in cursor-pointer text-lg sm:text-xl"
+                onClick={() => handleClick(element.id)}
+                onKeyDown={(e) => {
+                  if (e.key == "Enter") handleClick(element.id);
+                }}
+                tabIndex={0}
+                role="button"
+              >
+                <div>{element.name.split("_").join(" ")}</div>
+                <div className="text-primary">{element.calories} Kcal</div>
+              </div>
+            ))
+          : value && (
+              <div className="px-5 py-2 text-primary/80 text-lg">
+                No items matched your query
+              </div>
+            )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;

@@ -1,19 +1,19 @@
-import { useFood } from "../store/zustandstore"
-import { Input } from "./ui/input"
-import Result from "./Result"
-import { Microscomp } from "./Mircroscomp"
-import React, { useEffect } from "react"
+import { useFood } from "../store/zustandstore";
+import { Input } from "./ui/input";
+import Result from "./Result";
+import { Microscomp } from "./Mircroscomp";
+import React, { useEffect } from "react";
 
 const FoodSection = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
-  const data = useFood((state) => state.log)
-  const update = useFood((state) => state.updateGrams)
-  const temp = useFood((state) => state.tempdata)
-  const remove = useFood((state) => state.remove)
+  const data = useFood((state) => state.log);
+  const update = useFood((state) => state.updateGrams);
+  const temp = useFood((state) => state.tempdata);
+  const remove = useFood((state) => state.remove);
 
   useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data))
-    localStorage.setItem("tempdata", JSON.stringify(temp))
-  }, [data, temp])
+    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("tempdata", JSON.stringify(temp));
+  }, [data, temp]);
 
   return (
     <div className="mt-10 mb-8 mx-auto max-w-6xl px-4">
@@ -22,10 +22,7 @@ const FoodSection = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
       </div>
 
       {data.length > 0 ? (
-        <div
-          className="flex flex-col lg:flex-row gap-8 px-5 py-3"
-          ref={ref}
-        >
+        <div className="flex flex-col lg:flex-row gap-8 px-5 py-3" ref={ref}>
           <div className="flex flex-col gap-y-8 flex-1">
             {data.map((item) => (
               <div
@@ -110,7 +107,7 @@ const FoodSection = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default FoodSection
+export default FoodSection;

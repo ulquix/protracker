@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBar"
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -8,12 +8,13 @@ const Header = () => {
       </h1>
 
       <p className="text-lg sm:text-xl lg:text-2xl text-secondary-foreground mb-8">
-        Track your macros and micros with precision. Search, add, and calculate nutrition for your meals.
+        Track your macros and micros with precision. Search, add, and calculate
+        nutrition for your meals.
       </p>
 
       <SearchBar />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
