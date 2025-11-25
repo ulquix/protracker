@@ -1,42 +1,43 @@
 import type { FoodItem, Total } from "@/types/globaltypes";
 
+
 export const foodItems: FoodItem[] = [
   {
     id: "egg",
-    name: "Egg",
+    name: "Egg (whole, raw, 100g)",
     macros: {
-      calories: 72,
-      protein_g: 6.5,
-      fat_g: 5.0,
-      carbs_g: 0.5,
+      calories: 143,
+      protein_g: 12.6,
+      fat_g: 9.5,
+      carbs_g: 0.7,
     },
     micros: {
-      sugar_g: 0.2,
+      sugar_g: 1.1,
       calcium_mg: 56,
-      iron_mg: 1.0,
-      magnesium_mg: 6,
-      phosphorus_mg: 99,
-      potassium_mg: 69,
-      sodium_mg: 71,
-      zinc_mg: 0.5,
-      selenium_mcg: 15.5,
-      vitamin_a_mcg: 80,
+      iron_mg: 1.75,
+      magnesium_mg: 12,
+      phosphorus_mg: 198,
+      potassium_mg: 138,
+      sodium_mg: 142,
+      zinc_mg: 1.29,
+      selenium_mcg: 30.7,
+      vitamin_a_mcg: 160,
       vitamin_c_mg: 0,
-      vitamin_d_mcg: 1,
-      vitamin_e_mg: 0.5,
-      vitamin_b12_mcg: 0.54,
-      folate_mcg: 23.5,
-      choline_mg: 147,
+      vitamin_d_mcg: 2,
+      vitamin_e_mg: 1.05,
+      vitamin_b12_mcg: 0.89,
+      folate_mcg: 47,
+      choline_mg: 294,
     }
   },
   {
     id: "peanut",
-    name: "Peanut",
+    name: "Peanut (roasted, 100g)",
     macros: {
       calories: 567,
       protein_g: 25.8,
       fat_g: 49.2,
-      carbs_g: 16,
+      carbs_g: 16.1,
     },
     micros: {
       fiber_g: 8.5,
@@ -51,7 +52,7 @@ export const foodItems: FoodItem[] = [
       copper_mg: 1.1,
       manganese_mg: 1.9,
       selenium_mcg: 7.2,
-      vitamin_e_mg: 8.3,
+      vitamin_e_mg: 8.33,
       vitamin_b1_mg: 0.64,
       vitamin_b3_mg: 12,
       folate_mcg: 240,
@@ -59,7 +60,7 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "soya_chunks",
-    name: "Soya Chunks",
+    name: "Soya Chunks (dry, 100g)",
     macros: {
       calories: 345,
       protein_g: 52,
@@ -68,30 +69,34 @@ export const foodItems: FoodItem[] = [
     },
     micros: {
       fiber_g: 13,
-      sugar_g: 33,
+      sugar_g: 7, // Corrected from 33
       calcium_mg: 350,
       iron_mg: 20,
+      magnesium_mg: 280,
+      potassium_mg: 1800,
     }
   },
   {
     id: "paneer",
-    name: "Paneer",
+    name: "Paneer (100g)",
     macros: {
-      calories: 265,
-      protein_g: 20,
-      fat_g: 20,
-      carbs_g: 3.5,
+      calories: 298,
+      protein_g: 18,
+      fat_g: 22,
+      carbs_g: 3.4,
     },
     micros: {
       sugar_g: 2.8,
-      calcium_mg: 600,
+      calcium_mg: 480,
       iron_mg: 0.5,
-      phosphorus_mg: 252,
+      phosphorus_mg: 208,
+      sodium_mg: 22,
+      vitamin_a_mcg: 210,
     }
   },
   {
     id: "milk",
-    name: "Milk",
+    name: "Milk (cow, whole, 100g)",
     macros: {
       calories: 61,
       protein_g: 3.2,
@@ -111,71 +116,81 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "roti",
-    name: "Roti",
+    name: "Roti (whole wheat, 100g)",
     macros: {
-      calories: 299,
-      protein_g: 7.85,
-      fat_g: 9.2,
-      carbs_g: 46.13,
+      calories: 297,
+      protein_g: 9.7,
+      fat_g: 6.8,
+      carbs_g: 51,
     },
     micros: {
-      fiber_g: 9.7,
-      sugar_g: 2.9,
-      calcium_mg: 36,
-      iron_mg: 2.2,
-      magnesium_mg: 56,
-      phosphorus_mg: 158,
-      potassium_mg: 196,
+      fiber_g: 7.1,
+      sugar_g: 2.7,
+      calcium_mg: 26,
+      iron_mg: 2.7,
+      magnesium_mg: 64,
+      phosphorus_mg: 192,
+      potassium_mg: 233,
       sodium_mg: 298,
-      manganese_mg: 1.7,
-      zinc_mg: 1.5,
+      manganese_mg: 2.5,
+      zinc_mg: 1.6,
     }
   },
   {
     id: "moong_daal",
-    name: "Moong Daal",
+    name: "Moong Daal (split, dry, 100g)",
     macros: {
-      calories: 330,
+      calories: 347,
       protein_g: 24,
       fat_g: 1,
-      carbs_g: 60,
+      carbs_g: 59,
     },
     micros: {
-      fiber_g: 16,
-      iron_mg: 6.5,
-      magnesium_mg: 120,
-      potassium_mg: 1250,
+      fiber_g: 8.2,
+      iron_mg: 6.6,
+      magnesium_mg: 97,
+      potassium_mg: 1246,
     }
   },
   {
     id: "gram_flour",
-    name: "Gram Flour",
+    name: "Gram Flour (besan, 100g)",
     macros: {
-      calories: 313,
+      calories: 387,
       protein_g: 22,
-      fat_g: 5.4,
-      carbs_g: 49.6,
+      fat_g: 6,
+      carbs_g: 58,
     },
-    micros: {}
+    micros: {
+      fiber_g: 10.8,
+      calcium_mg: 45,
+      iron_mg: 4.86,
+      magnesium_mg: 166,
+      phosphorus_mg: 318,
+      potassium_mg: 846,
+    }
   },
   {
     id: "black_chickpeas",
-    name: "Black Chickpeas",
+    name: "Black Chickpeas (dry, 100g)",
     macros: {
-      calories: 164,
-      protein_g: 20,
-      fat_g: 2.6,
-      carbs_g: 27,
+      calories: 364,
+      protein_g: 20.5,
+      fat_g: 5,
+      carbs_g: 60,
     },
     micros: {
-      fiber_g: 7.6,
-      sugar_g: 4.8,
-      potassium_mg: 291,
+      fiber_g: 17,
+      sugar_g: 11,
+      potassium_mg: 877,
+      calcium_mg: 143,
+      iron_mg: 6.2,
+      magnesium_mg: 166,
     }
   },
   {
     id: "soyabeans",
-    name: "Soyabeans",
+    name: "Soybeans (dry, 100g)",
     macros: {
       calories: 446,
       protein_g: 36.5,
@@ -184,58 +199,65 @@ export const foodItems: FoodItem[] = [
     },
     micros: {
       fiber_g: 9.3,
-      calcium_mg: 102,
-      iron_mg: 5.1,
-      zinc_mg: 1.2,
-      copper_mg: 0.41,
-      manganese_mg: 0.82,
-      phosphorus_mg: 245,
+      calcium_mg: 277,
+      iron_mg: 15.7,
+      zinc_mg: 4.9,
+      copper_mg: 1.65,
+      manganese_mg: 2.5,
+      phosphorus_mg: 704,
     }
   },
   {
     id: "oats",
-    name: "Oats",
+    name: "Oats (rolled, 100g)",
     macros: {
-      calories: 401,
-      protein_g: 10.9,
-      fat_g: 7.5,
-      carbs_g: 72.4,
+      calories: 389,
+      protein_g: 16.9,
+      fat_g: 6.9,
+      carbs_g: 66.3,
     },
-    micros: {}
+    micros: {
+      fiber_g: 10.6,
+      iron_mg: 4.7,
+      magnesium_mg: 177,
+      phosphorus_mg: 523,
+      potassium_mg: 429,
+      zinc_mg: 3.97,
+    }
   },
   {
     id: "almonds",
-    name: "Almonds",
+    name: "Almonds (100g)",
     macros: {
       calories: 579,
-      protein_g: 21,
-      fat_g: 50,
-      carbs_g: 22,
+      protein_g: 21.2,
+      fat_g: 49.9,
+      carbs_g: 21.6,
     },
     micros: {
-      fiber_g: 13,
-      sugar_g: 4,
+      fiber_g: 12.5,
+      sugar_g: 4.4,
       calcium_mg: 269,
-      iron_mg: 4,
+      iron_mg: 3.7,
       magnesium_mg: 270,
       phosphorus_mg: 481,
       potassium_mg: 733,
       sodium_mg: 1,
-      zinc_mg: 3,
+      zinc_mg: 3.1,
       copper_mg: 1,
-      manganese_mg: 2,
-      vitamin_e_mg: 26,
-      riboflavin_mg: 1,
+      manganese_mg: 2.1,
+      vitamin_e_mg: 25.6,
+      riboflavin_mg: 1.14,
     }
   },
   {
     id: "walnuts",
-    name: "Walnuts",
+    name: "Walnuts (100g)",
     macros: {
       calories: 654,
       protein_g: 15.2,
       fat_g: 65.2,
-      carbs_g: 13.71,
+      carbs_g: 13.7,
     },
     micros: {
       fiber_g: 6.7,
@@ -254,12 +276,12 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "curd",
-    name: "Curd",
+    name: "Curd (plain, 100g)",
     macros: {
-      calories: 38,
-      protein_g: 3.2,
-      fat_g: 0.5,
-      carbs_g: 4.4,
+      calories: 61,
+      protein_g: 3.5,
+      fat_g: 3.3,
+      carbs_g: 4.7,
     },
     micros: {
       sugar_g: 4.4,
@@ -269,17 +291,17 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "tofu",
-    name: "Tofu",
+    name: "Tofu (firm, 100g)",
     macros: {
       calories: 76,
-      protein_g: 8,
-      fat_g: 5,
-      carbs_g: 2,
+      protein_g: 8.1,
+      fat_g: 4.8,
+      carbs_g: 1.9,
     },
     micros: {
       fiber_g: 0.3,
       calcium_mg: 350,
-      iron_mg: 5,
+      iron_mg: 5.4,
       magnesium_mg: 30,
       phosphorus_mg: 97,
       potassium_mg: 121,
@@ -292,56 +314,56 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "chia",
-    name: "Chia Seeds",
+    name: "Chia Seeds (100g)",
     macros: {
       calories: 486,
-      protein_g: 17,
-      fat_g: 31,
-      carbs_g: 42,
+      protein_g: 16.5,
+      fat_g: 30.7,
+      carbs_g: 42.1,
     },
     micros: {
-      fiber_g: 34,
+      fiber_g: 34.4,
       calcium_mg: 631,
-      iron_mg: 8,
+      iron_mg: 7.7,
       magnesium_mg: 335,
       phosphorus_mg: 860,
       potassium_mg: 407,
       sodium_mg: 16,
-      zinc_mg: 5,
-      copper_mg: 1,
-      manganese_mg: 3,
+      zinc_mg: 4.6,
+      copper_mg: 0.9,
+      manganese_mg: 2.7,
       selenium_mcg: 55,
-      omega_3_g: 18,
+      omega_3_g: 17.8,
     }
   },
   {
-    id: "flax",
-    name: "Flax Seeds",
+    id: "flax_seeds",
+    name: "Flax Seeds (100g)",
     macros: {
       calories: 534,
-      protein_g: 18,
-      fat_g: 42,
-      carbs_g: 29,
+      protein_g: 18.3,
+      fat_g: 42.2,
+      carbs_g: 28.9,
     },
     micros: {
-      fiber_g: 27,
-      sugar_g: 2,
+      fiber_g: 27.3,
+      sugar_g: 1.6,
       calcium_mg: 255,
-      iron_mg: 6,
+      iron_mg: 5.7,
       magnesium_mg: 392,
       phosphorus_mg: 642,
       potassium_mg: 813,
       sodium_mg: 30,
-      zinc_mg: 4,
-      copper_mg: 1,
-      manganese_mg: 2,
-      selenium_mcg: 25,
-      vitamin_b1_mg: 2,
+      zinc_mg: 4.3,
+      copper_mg: 1.3,
+      manganese_mg: 2.5,
+      selenium_mcg: 25.4,
+      vitamin_b1_mg: 1.6,
     }
   },
   {
     id: "pumpkin_seeds",
-    name: "Pumpkin Seeds",
+    name: "Pumpkin Seeds (100g)",
     macros: {
       calories: 446,
       protein_g: 19,
@@ -363,11 +385,11 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "sunflower_seeds",
-    name: "Sunflower Seeds",
+    name: "Sunflower Seeds (100g)",
     macros: {
       calories: 584,
-      protein_g: 21,
-      fat_g: 51,
+      protein_g: 20.8,
+      fat_g: 51.5,
       carbs_g: 20,
     },
     micros: {
@@ -389,34 +411,11 @@ export const foodItems: FoodItem[] = [
     }
   },
   {
-    id: "watermelon",
-    name: "Watermelon",
-    macros: {
-      calories: 30,
-      protein_g: 0.61,
-      fat_g: 0.15,
-      carbs_g: 7.6,
-    },
-    micros: {
-      fiber_g: 0.4,
-      sugar_g: 6.2,
-      calcium_mg: 7,
-      iron_mg: 0.24,
-      magnesium_mg: 10,
-      phosphorus_mg: 11,
-      potassium_mg: 112,
-      sodium_mg: 1,
-      zinc_mg: 0.1,
-      vitamin_a_mcg: 28,
-      vitamin_c_mg: 8.1,
-    }
-  },
-  {
     id: "hemp_seeds",
-    name: "Hemp Seeds",
+    name: "Hemp Seeds (100g)",
     macros: {
       calories: 553,
-      protein_g: 31.56,
+      protein_g: 31.6,
       fat_g: 48.8,
       carbs_g: 8.7,
     },
@@ -438,7 +437,7 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "ghee",
-    name: "Ghee",
+    name: "Ghee (clarified butter, 100g)",
     macros: {
       calories: 876,
       protein_g: 0,
@@ -458,7 +457,7 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "mustard_oil",
-    name: "Mustard Oil",
+    name: "Mustard Oil (100g)",
     macros: {
       calories: 884,
       protein_g: 0,
@@ -475,25 +474,25 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "rice",
-    name: "Rice",
+    name: "Rice (white, dry, 100g)",
     macros: {
       calories: 365,
       protein_g: 7.1,
-      fat_g: 0.66,
+      fat_g: 0.7,
       carbs_g: 80,
     },
     micros: {
       fiber_g: 1.3,
-      sugar_g: 0.12,
+      sugar_g: 0.1,
       calcium_mg: 28,
-      iron_mg: 4.3,
+      iron_mg: 1.2,
       magnesium_mg: 25,
       potassium_mg: 115,
     }
   },
   {
     id: "rajma",
-    name: "Rajma (Kidney Beans)",
+    name: "Rajma (kidney beans, dry, 100g)",
     macros: {
       calories: 337,
       protein_g: 23,
@@ -514,7 +513,7 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "chickpeas",
-    name: "Chickpeas",
+    name: "Chickpeas (dry, 100g)",
     macros: {
       calories: 378,
       protein_g: 20,
@@ -532,48 +531,48 @@ export const foodItems: FoodItem[] = [
       sodium_mg: 24,
       zinc_mg: 2.8,
       copper_mg: 0.66,
-      manganese_mg: 21,
+      manganese_mg: 1.21,
       folate_mcg: 557,
     }
   },
   {
     id: "chicken",
-    name: "Chicken Breast",
+    name: "Chicken Breast (cooked, 100g)",
     macros: {
-      calories: 120,
-      protein_g: 23,
-      fat_g: 2.6,
+      calories: 165,
+      protein_g: 31,
+      fat_g: 3.6,
       carbs_g: 0,
     },
     micros: {
-      calcium_mg: 6,
-      iron_mg: 0.4,
-      magnesium_mg: 31,
-      phosphorus_mg: 246,
-      potassium_mg: 276,
-      sodium_mg: 79,
-      zinc_mg: 1.1,
-      selenium_mcg: 26,
-      niacin_mg: 15,
-      vitamin_b6_mg: 0.64,
-      vitamin_b12_mcg: 0.37,
-      choline_mg: 96,
+      calcium_mg: 12,
+      iron_mg: 1,
+      magnesium_mg: 29,
+      phosphorus_mg: 222,
+      potassium_mg: 256,
+      sodium_mg: 74,
+      zinc_mg: 1,
+      selenium_mcg: 22,
+      niacin_mg: 14.8,
+      vitamin_b6_mg: 0.6,
+      vitamin_b12_mcg: 0.3,
+      choline_mg: 85,
     }
   },
   {
     id: "apple",
-    name: "Apple",
+    name: "Apple (raw, 100g)",
     macros: {
       calories: 52,
-      protein_g: 0.26,
-      fat_g: 0.17,
+      protein_g: 0.3,
+      fat_g: 0.2,
       carbs_g: 14,
     },
     micros: {
       fiber_g: 2.4,
       sugar_g: 10,
       calcium_mg: 6,
-      iron_mg: 0.12,
+      iron_mg: 0.1,
       magnesium_mg: 5,
       phosphorus_mg: 11,
       potassium_mg: 107,
@@ -585,18 +584,18 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "banana",
-    name: "Banana",
+    name: "Banana (raw, 100g)",
     macros: {
       calories: 89,
       protein_g: 1.1,
-      fat_g: 0.33,
+      fat_g: 0.3,
       carbs_g: 23,
     },
     micros: {
       fiber_g: 2.6,
       sugar_g: 12,
       calcium_mg: 5,
-      iron_mg: 0.26,
+      iron_mg: 0.3,
       magnesium_mg: 27,
       phosphorus_mg: 22,
       potassium_mg: 358,
@@ -609,12 +608,12 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "cashews",
-    name: "Cashews",
+    name: "Cashews (dry, 100g)",
     macros: {
       calories: 553,
-      protein_g: 18,
-      fat_g: 44,
-      carbs_g: 30,
+      protein_g: 18.2,
+      fat_g: 43.8,
+      carbs_g: 30.2,
     },
     micros: {
       fiber_g: 3.3,
@@ -624,11 +623,11 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "raisins",
-    name: "Raisins",
+    name: "Raisins (100g)",
     macros: {
       calories: 299,
       protein_g: 3.1,
-      fat_g: 0.46,
+      fat_g: 0.5,
       carbs_g: 79,
     },
     micros: {
@@ -647,76 +646,70 @@ export const foodItems: FoodItem[] = [
   },
   {
     id: "spinach",
-    name: "Spinach",
+    name: "Spinach (raw, 100g)",
     macros: {
       calories: 23,
-      protein_g: 2.86,
-      fat_g: 0.39,
-      carbs_g: 3.63,
+      protein_g: 2.9,
+      fat_g: 0.4,
+      carbs_g: 3.6,
     },
     micros: {
       fiber_g: 2.2,
       sugar_g: 0.4,
-      calcium_mg: 30,
-      iron_mg: 0.8,
-      magnesium_mg: 25,
-      potassium_mg: 170,
-      sodium_mg: 24,
-      zinc_mg: 0.2,
-      folate_mcg: 60,
-      vitamin_a_mcg: 840,
-      vitamin_c_mg: 8,
-      vitamin_k_mcg: 145,
+      calcium_mg: 99,
+      iron_mg: 2.7,
+      magnesium_mg: 79,
+      potassium_mg: 558,
+      sodium_mg: 79,
+      zinc_mg: 0.5,
+      folate_mcg: 194,
+      vitamin_a_mcg: 469,
+      vitamin_c_mg: 28.1,
+      vitamin_k_mcg: 482.9,
     }
   },
   {
-    id:"amla",
-    name: "Amla",
+    id: "amla",
+    name: "Amla (Indian gooseberry, raw, 100g)",
     macros: {
-    calories: 44,              // ~44 kcal per 100 g :contentReference[oaicite:0]{index=0}  
-    protein_g: 0.9,            // ~0.9 g :contentReference[oaicite:1]{index=1}  
-    carbs_g: 10.2,             // ~10.2 g :contentReference[oaicite:2]{index=2}  
-    fat_g: 0.58,               // ~0.58 g :contentReference[oaicite:3]{index=3}  
-  },
-  micros: {
-    calcium_mg: 25,            // ~25 mg :contentReference[oaicite:6]{index=6}  
-    iron_mg: 0.9,              // ~0.9 mg :contentReference[oaicite:7]{index=7}  
-    sugar_g: 4.4    ,           // ~4.4g sugar (per Indian Express) :contentReference[oaicite:5]{index=5}  
-    magnesium_mg: 10, 
-        fiber_g: 4.3,              // ~4.3 g :contentReference[oaicite:4]{index=4}  
-         // ~10 mg :contentReference[oaicite:8]{index=8}  
-    phosphorus_mg: 21,         // ~21 mg :contentReference[oaicite:9]{index=9}  
-    potassium_mg: 198,         // ~198 mg :contentReference[oaicite:10]{index=10}  
-    sodium_mg: 13,             // ~13 mg :contentReference[oaicite:11]{index=11}  
-    copper_mg: 0.1,             // ~0.1 mg :contentReference[oaicite:12]{index=12}  
-    manganese_mg: 0.1,         // ~0.1 mg :contentReference[oaicite:13]{index=13}  
-    zinc_mg: 0.12,              // ~0.12 mg :contentReference[oaicite:14]{index=14}  
-    selenium_mcg: 0.6,         // ~0.6 µg :contentReference[oaicite:15]{index=15}  
-
-    vitamin_a_mcg: 15 / 0.3,   // Different sources: ~15 mcg or 290 IU (≈ 87 mcg); using lower bound :contentReference[oaicite:16]{index=16}  
-    vitamin_a_iu: 290,         // ~290 IU :contentReference[oaicite:17]{index=17}  
-
-    vitamin_c_mg: 478,         // ~478 mg (varies widely) :contentReference[oaicite:18]{index=18}  
-    vitamin_d_mcg: 0,          // none / negligible in fresh amla :contentReference[oaicite:19]{index=19}  
-    vitamin_e_mg: 0.16,         // ~0.16 mg α-tocopherol :contentReference[oaicite:20]{index=20}  
-    vitamin_k_mcg: 1.6,         // ~1.6 µg :contentReference[oaicite:21]{index=21}  
-
-    vitamin_b1_mg: 0.1,         // ~0.1 mg (thiamine) :contentReference[oaicite:22]{index=22}  
-    vitamin_b2_mg: 0.04,        // ~0.04 mg (riboflavin) :contentReference[oaicite:23]{index=23}  
-    niacin_mg: 0.5,             // ~0.5 mg (B3 / niacin) :contentReference[oaicite:24]{index=24}  
-    vitamin_b5_mg: 0.3,         // ~0.3 mg (pantothenic acid) :contentReference[oaicite:25]{index=25}  
-    vitamin_b6_mg: 0.06,        // ~0.06 mg :contentReference[oaicite:26]{index=26}  
-    vitamin_b7_mcg: 0,          // biotin not reported or negligible :contentReference[oaicite:27]{index=27}  
-    vitamin_b9_mcg: 3,          // ~3 µg folate :contentReference[oaicite:28]{index=28}  
-    vitamin_b12_mcg: 0,         // none / negligible :contentReference[oaicite:29]{index=29}  
-
-    choline_mg: 4,              // ~4 mg :contentReference[oaicite:30]{index=30}  
-    cholesterol_mg: 0,          // 0 mg (plant fruit) :contentReference[oaicite:31]{index=31}  
-
-    omega_3_g: 0.048 / 0.000048, // ~48 mg (~0.048 g) omega-3 (ALA) :contentReference[oaicite:32]{index=32}  
+      calories: 44,
+      protein_g: 0.9,
+      carbs_g: 10.2,
+      fat_g: 0.6,
+    },
+    micros: {
+      calcium_mg: 25,
+      iron_mg: 0.9,
+      sugar_g: 4.4,
+      magnesium_mg: 10,
+      fiber_g: 4.3,
+      phosphorus_mg: 21,
+      potassium_mg: 198,
+      sodium_mg: 13,
+      copper_mg: 0.1,
+      manganese_mg: 0.1,
+      zinc_mg: 0.12,
+      selenium_mcg: 0.6,
+      vitamin_a_mcg: 31,
+      vitamin_c_mg: 478,
+      vitamin_d_mcg: 0,
+      vitamin_e_mg: 0.16,
+      vitamin_k_mcg: 1.6,
+      vitamin_b1_mg: 0.04,
+      vitamin_b2_mg: 0.03,
+      niacin_mg: 0.3,
+      vitamin_b5_mg: 0.25,
+      vitamin_b6_mg: 0.06,
+      vitamin_b9_mcg: 6,
+      choline_mg: 4,
+      cholesterol_mg: 0,
+      omega_3_g: 0.048,
+    }
   }
-  }
+  // Add more foods as needed per above reference/corrections.
 ];
+
+
 
 export const dailyRequirements :Total= {
   macros: {
@@ -737,15 +730,15 @@ export const dailyRequirements :Total= {
   manganese_mg: 2.3,
 
   fiber_g: 28,
-  sugar_g: 25, // upper limit, not RDA
-  saturated_fat_g: 20, // recommended max
-  monounsaturated_fat_g: 30, // typical target range
-  polyunsaturated_fat_g: 17, // typical target range
-  omega_3_g: 1.6, // ALA requirement
+  sugar_g: 25, 
+  saturated_fat_g: 20, 
+  monounsaturated_fat_g: 30, 
+  polyunsaturated_fat_g: 17, 
+  omega_3_g: 1.6, 
 
   selenium_mcg: 55,
   vitamin_a_mcg: 900,
-  vitamin_a_iu: 3000, // converted equivalent
+  vitamin_a_iu: 3000, 
 
   vitamin_c_mg: 90,
   vitamin_d_mcg: 15,
@@ -754,14 +747,14 @@ export const dailyRequirements :Total= {
 
   vitamin_b1_mg: 1.2,
   vitamin_b2_mg: 1.3,
-  riboflavin_mg: 1.3, // same as B2, keeping consistent
+  riboflavin_mg: 1.3, 
   vitamin_b3_mg: 16,
-  niacin_mg: 16, // same nutrient as B3
+  niacin_mg: 16, 
   vitamin_b5_mg: 5,
   vitamin_b6_mg: 1.3,
-  vitamin_b7_mcg: 30, // biotin
+  vitamin_b7_mcg: 30, 
   vitamin_b9_mcg: 400,
-  folate_mcg: 400, // same nutrient as B9
+  folate_mcg: 400, 
   vitamin_b12_mcg: 2.4,
 
   choline_mg: 550,

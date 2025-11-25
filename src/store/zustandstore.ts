@@ -4,7 +4,7 @@ import type { FoodItem,LoggedFood, Macros, Micros ,Total} from '@/types/globalty
  import { micros,macros } from '@/constants/micros'
 
 
-interface iskadata{
+interface StoreParams{
   tempdata:Record<string,Total>,
     data:FoodItem[] ,
     log:LoggedFood[],
@@ -14,7 +14,7 @@ interface iskadata{
     totals:()=>Total
 
 }
-export const useFood = create<iskadata>((set,get) => ({
+export const useFood = create<StoreParams>((set,get) => ({
   tempdata:JSON.parse(localStorage.getItem("tempdata")!) || {},
   data:foodItems,
   log:JSON.parse(localStorage.getItem("data")!) as LoggedFood[] || [],
@@ -25,7 +25,6 @@ export const useFood = create<iskadata>((set,get) => ({
       return
     }
     const food = data.find((dat)=>dat.id==foodId) as FoodItem
-    console.log(food)
     set(state => ({
       log: [
         ...state.log,
@@ -46,7 +45,7 @@ updateGrams(id, grams) {
 const f = grams/100
   const logItem = log.find(f => f.id === id);
   if (!logItem) return;
-
+ 
   const food = data.find(f => f.id === logItem.foodId);
   if (!food) return;
 
