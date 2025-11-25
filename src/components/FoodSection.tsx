@@ -16,14 +16,14 @@ const FoodSection = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
   }, [data, temp])
 
   return (
-    <div className="mt-10 mb-8 mx-auto max-w-7xl px-4">
+    <div className="mt-10 mb-8 mx-auto max-w-6xl px-4">
       <div className="text-2xl font-semibold text-secondary-foreground mb-5">
         Your Foods
       </div>
 
       {data.length > 0 ? (
         <div
-          className="flex flex-col lg:flex-row gap-8"
+          className="flex flex-col lg:flex-row gap-8 px-5 py-3"
           ref={ref}
         >
           <div className="flex flex-col gap-y-8 flex-1">
