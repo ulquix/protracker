@@ -34,13 +34,13 @@ const SearchBar = () => {
         !targetRef.current.contains(event.target as Node)
       ) {
         targetRef.current.blur();
-        setSuggestions([]);
-        setValue("");
+        // setSuggestions([]);
+        // setValue("");
       }
     };
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setSuggestions([]);
+        // setSuggestions([]);
         setValue("");
         targetRef.current?.blur();
       }
