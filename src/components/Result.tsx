@@ -25,14 +25,14 @@ const Result = () => {
       <div className="text-secondary-foreground mb-10">
         <h2 className="text-3xl mb-2.5 ml-5">Macros</h2>
 
-        <div className="flex text-3xl gap-4  items-center mb-3 flex-wrap  ">
+        <div className="flex text-3xl gap-y-4   items-center mb-3 flex-wrap  ">
           {total?.macros &&
             Object.keys(total.macros).map(key => (
               <div
                 key={key}
-                className="bg-background w-25 h-30 relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center cursor-pointer "
+                className="bg-background w-20 mx-auto h-30 relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center cursor-pointer "
               >
-                <div className="text-2xl">{key.split("_")[0]}</div>
+                <div className="text-2xl ">{key.split("_")[0]}</div>
                 <div className="text-primary">
                   {total.macros[key as keyof Macros].toFixed(1)}
                 </div>
@@ -55,7 +55,7 @@ const Result = () => {
             Object.keys(total.micros).map(micro => (
               <div
                 key={micro}
-  className="flex justify-between relative bg-background p-3 rounded-xl border-2 border-primary/80 min-w-[200px] cursor-pointer"
+  className="flex justify-between relative bg-background p-3 rounded-xl border-2 border-primary/80  cursor-pointer"
               >
                 <div className="text-xl">{micro.split("_").slice(0, -1).join(" ")}</div>
 
