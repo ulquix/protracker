@@ -68,7 +68,7 @@ const SearchBar = () => {
           suggestions.map((element) => (
             <div
               key={element.id}
-              className="mx-2 px-5 py-2 flex justify-between mb-2 hover:bg-background rounded-xl transition-all duration-75 ease-in cursor-pointer text-lg sm:text-xl"
+              className="mx-2 px-5 py-2 flex justify-between mb-2 hover:bg-background focus:bg-background rounded-xl transition-all duration-75 ease-in cursor-pointer text-lg sm:text-xl"
               onClick={() => handleClick(element.id)}
               onKeyDown={(e) => {
                 if (e.key == "Enter") handleClick(element.id)

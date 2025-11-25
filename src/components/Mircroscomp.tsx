@@ -8,7 +8,7 @@ export const Microscomp = ({
 }) => {
   return (
     <details className="mt-3 ">
-      <summary className="cursor-pointer font-medium text-lg hover:underline">
+      <summary className="cursor-pointer font-medium text-lg hover:underline focus:underline">
         View micros
       </summary>
 

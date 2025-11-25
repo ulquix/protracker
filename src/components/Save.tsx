@@ -24,7 +24,7 @@ const Save = ({ targetRef }: { targetRef: React.RefObject<HTMLDivElement | null>
       }
   return (
     
-<button className="text-primary hover:bg-accent  border-3 border-foreground  transition duration-75  mx-auto block bg-card tracking-wide shadow-(--shadow-bg) dark:shadow-(--shadow-dark) mb-50 mt-20 rounded-2xl cursor-pointer p-3 text-3xl" onClick={handleDownload}>Download</button>
+<button className="text-primary hover:bg-accent active:bg-accent  border-3 border-foreground  transition duration-75  mx-auto block bg-card tracking-wide shadow-(--shadow-bg) dark:shadow-(--shadow-dark) mb-50 mt-20 rounded-2xl cursor-pointer p-3 text-3xl" onClick={handleDownload}>Download</button>
   )
 }
 

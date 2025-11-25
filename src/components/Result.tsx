@@ -37,7 +37,7 @@ const Result = () => {
                   {total.macros[key as keyof Macros].toFixed(1)}
                 </div>
                 <div className="text-2xl">{key.split("_")[1] || "Kcal"}</div>
-                <div className="absolute top-0 left-0 bg-foreground text-background w-full h-full text-wrap opacity-0 hover:opacity-80 rounded-lg flex flex-col justify-center items-center p-2">
+                <div className="absolute top-0 left-0 bg-foreground text-background w-full h-full text-wrap opacity-0 hover:opacity-80 focus:opacity-80 rounded-lg flex flex-col justify-center items-center p-2">
                   <div className=" text-xl">daily value:</div>
                   <div>{dailyRequirements.macros[key as keyof Macros]}
 </div>
@@ -62,7 +62,7 @@ const Result = () => {
                 <div className="text-primary flex text-lg">
                   <div>{total.micros[micro as keyof Micros]?.toFixed(2)}</div>
                   <div className="ml-1">{micro.split("_").at(-1)}</div>
-                  <div className="absolute top-0 left-0 bg-foreground text-background w-full h-full text-wrap opacity-0 hover:opacity-80 rounded-lg flex flex-col justify-center items-center p-2">
+                  <div className="absolute top-0 left-0 bg-foreground text-background w-full h-full text-wrap opacity-0 hover:opacity-80 focus:opacity-80 rounded-lg flex flex-col justify-center items-center p-2">
                   <div className=" text-xl">daily value:</div>
                   <div>{dailyRequirements.micros[micro as keyof Micros]}
 </div>
