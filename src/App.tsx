@@ -9,7 +9,7 @@ const dataref = useRef<HTMLDivElement | null>(null)
 
   return (
     <>
-    <div className="min-h-screen bg-background  font-pixel pt-1 [--shadow-bg:8px_8px_1px_rgba(105,52,15,0.5)] [--shadow-dark:8px_8px_1px_rgba(245,245,244,0.3)]">
+    <div className="min-h-screen bg-background  font-pixel transition-all duration-150 pt-1 [--shadow-bg:8px_8px_1px_rgba(105,52,15,0.5)] [--shadow-dark:8px_8px_1px_rgba(245,245,244,0.3)]">
       <Theme/>
       <Header/>
 <FoodSection ref={dataref}/>

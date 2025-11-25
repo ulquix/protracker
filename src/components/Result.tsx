@@ -25,12 +25,12 @@ const Result = () => {
       <div className="text-secondary-foreground mb-10">
         <h2 className="text-3xl mb-2.5 ml-5">Macros</h2>
 
-        <div className="flex text-3xl gap-x-4 justify-center items-center mb-3 flex-wrap">
+        <div className="flex text-3xl gap-4  items-center mb-3 flex-wrap  ">
           {total?.macros &&
             Object.keys(total.macros).map(key => (
               <div
                 key={key}
-                className="bg-background relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center w-fit cursor-pointer"
+                className="bg-background w-25 h-30 relative p-3 border-2 border-primary/80 rounded-lg flex flex-col items-center cursor-pointer "
               >
                 <div className="text-2xl">{key.split("_")[0]}</div>
                 <div className="text-primary">

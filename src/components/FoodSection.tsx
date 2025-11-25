@@ -30,7 +30,7 @@ const FoodSection = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="p-5 bg-card rounded-2xl border-2 border-foreground dark:shadow-(--shadow-dark) shadow-(--shadow-bg) transition-all"
+                className="p-5 bg-card rounded-2xl border-2 border-foreground dark:shadow-(--shadow-dark) shadow-(--shadow-bg) "
               >
                 <div className="flex flex-col sm:flex-row justify-between mb-5 items-start sm:items-center gap-3">
                   <h1 className="text-xl sm:text-2xl font-medium">
