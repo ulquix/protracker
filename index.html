@@ -11,11 +11,11 @@
   </head>
      <script>
     try {
-      const theme = localStorage.getItem("food-theme"); 
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      .matches
+      ? "dark"
+      : "light";
+      let theme = localStorage.getItem("food-theme") || systemTheme
       const effectiveTheme = theme === "system" ? systemTheme : theme;
       document.documentElement.classList.add(effectiveTheme);
     } catch (error) {

@@ -11,7 +11,16 @@ const Result = () => {
     setTotal(logs());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [log]);
-
+useEffect(()=>{
+  if(total)
+localStorage.setItem("totals", JSON.stringify(total));
+},[total])
+useEffect(()=>{
+const savedTotals = localStorage.getItem("totals");
+if (savedTotals) {
+  setTotal(JSON.parse(savedTotals));
+}
+},[])
   return (
     <div className="bg-card border-2 border-foreground rounded-xl pt-5 dark:shadow-(--shadow-dark) shadow-(--shadow-bg) w-full h-fit mx-auto">
       <h1 className="text-center  text-card-foreground text-4xl  font-semibold mb-5">
